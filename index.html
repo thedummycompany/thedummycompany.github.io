@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>thedummycompany</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #f5f0e8;
+      --ink: #1a1a18;
+      --accent: #c8440e;
+      --mid: #8a8478;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 60px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      animation: fadeDown 0.6s ease both;
+    }
+
+    .logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      letter-spacing: -0.02em;
+    }
+
+    .logo span { color: var(--accent); }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 36px;
+    }
+
+    nav ul a {
+      text-decoration: none;
+      color: var(--mid);
+      font-size: 0.9rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover { color: var(--ink); }
+
+    .nav-cta {
+      background: var(--ink);
+      color: var(--cream) !important;
+      padding: 10px 22px;
+      border-radius: 40px;
+      font-weight: 500 !important;
+    }
+
+    .nav-cta:hover { background: var(--accent); color: var(--cream) !important; }
+
+    /* HERO */
+    .hero {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 120px 60px 80px;
+      animation: fadeUp 0.8s ease 0.2s both;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 28px;
+      border: 1px solid var(--accent);
+      padding: 5px 14px;
+      border-radius: 20px;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 28px;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--mid);
+      max-width: 520px;
+      line-height: 1.75;
+      margin-bottom: 48px;
+      font-weight: 300;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 16px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
+
+    .btn-ghost {
+      border: 1.5px solid var(--ink);
+      color: var(--ink);
+      padding: 16px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 400;
+      transition: all 0.2s;
+    }
+
+    .btn-ghost:hover { background: var(--ink); color: var(--cream); transform: translateY(-2px); }
+
+    /* DIVIDER */
+    .divider {
+      border: none;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      margin: 0 60px;
+    }
+
+    /* CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin: 60px 60px 0;
+      animation: fadeUp 0.8s ease 0.5s both;
+    }
+
+    .card {
+      background: white;
+      padding: 44px 36px;
+      transition: background 0.2s;
+    }
+
+    .card:hover { background: var(--ink); color: var(--cream); }
+    .card:hover .card-num, .card:hover p { color: rgba(255,255,255,0.5); }
+
+    .card-num {
+      font-size: 0.75rem;
+      color: var(--mid);
+      letter-spacing: 0.12em;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--mid);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 60px;
+      font-size: 0.85rem;
+      color: var(--mid);
+      margin-top: 60px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      animation: fadeUp 0.8s ease 0.7s both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 700px) {
+      nav { padding: 20px 24px; }
+      nav ul { display: none; }
+      .hero { padding: 60px 24px; }
+      .cards { grid-template-columns: 1fr; margin: 40px 24px 0; }
+      .divider { margin: 0 24px; }
+      footer { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">the<span>dummy</span>company</div>
+    <ul>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Work</a></li>
+      <li><a href="#" class="nav-cta">Get in touch</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="tag">Est. 2024</div>
+    <h1>We build things<br>that <em>actually</em> work.</h1>
+    <p>thedummycompany is a placeholder for something great. Clean ideas, honest work, and zero fluff — that's how we roll.</p>
+    <div class="buttons">
+      <a href="#" class="btn-primary">See our work</a>
+      <a href="#" class="btn-ghost">Learn more</a>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-num">01</div>
+      <h3>Strategy</h3>
+      <p>We think before we build. Every project starts with a clear plan and a sharper goal.</p>
+    </div>
+    <div class="card">
+      <div class="card-num">02</div>
+      <h3>Design</h3>
+      <p>Looks matter. We craft interfaces that feel as good as they function.</p>
+    </div>
+    <div class="card">
+      <div class="card-num">03</div>
+      <h3>Delivery</h3>
+      <p>On time, on budget, no drama. We ship and we stand behind what we make.</p>
+    </div>
+  </div>
+
+  <footer>
+    © 2024 thedummycompany · All rights reserved
+  </footer>
+
+</body>
+</html>
