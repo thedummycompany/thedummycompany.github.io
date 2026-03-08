@@ -4,6 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>thedummycompany</title>
+
+  <!-- CMS: WordPress 6.1.1 -->
+  <!-- Framework: Bootstrap 4.6 -->
+  <!-- Mail Server: Microsoft Exchange 2019 — mail.thedummycompany.github.io -->
+  <!-- VPN Gateway: Cisco AnyConnect — vpn.thedummycompany.github.io -->
+  <!-- Dev Environment: dev.thedummycompany.github.io -->
+  <!-- Staging: staging.thedummycompany.github.io -->
+  <!-- Admin Portal: admin.thedummycompany.github.io/wp-admin -->
+  <!-- Cloud: Microsoft Azure (East US region) -->
+  <!-- SSO Provider: Okta -->
+  <!-- Directory: Active Directory / Windows Server 2019 -->
+  <!-- Ticketing: Jira (internal.thedummycompany.github.io/jira) -->
+  <!-- Analytics: Google Analytics UA-2024-TDC -->
+  <!-- CDN: Cloudflare -->
+
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -187,13 +202,101 @@
       font-weight: 300;
     }
 
+    /* TEAM */
+    .team-section {
+      max-width: 900px;
+      margin: 80px auto 0;
+      padding: 0 60px;
+      animation: fadeUp 0.8s ease 0.6s both;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 36px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .team-card {
+      padding: 28px;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: white;
+    }
+
+    .team-card .role {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .team-card h4 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+    }
+
+    .team-card .dept {
+      font-size: 0.85rem;
+      color: var(--mid);
+      font-weight: 300;
+    }
+
+    /* JOBS */
+    .jobs-section {
+      max-width: 900px;
+      margin: 80px auto 0;
+      padding: 0 60px;
+      animation: fadeUp 0.8s ease 0.65s both;
+    }
+
+    .job-posting {
+      border: 1px solid rgba(0,0,0,0.08);
+      background: white;
+      padding: 36px;
+      margin-top: 24px;
+    }
+
+    .job-posting h4 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    .job-posting p {
+      font-size: 0.9rem;
+      color: var(--mid);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .job-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      background: var(--cream);
+      border: 1px solid rgba(0,0,0,0.1);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin: 12px 4px 0 0;
+      color: var(--ink);
+      letter-spacing: 0.05em;
+    }
+
     /* FOOTER */
     footer {
       text-align: center;
       padding: 60px;
       font-size: 0.85rem;
       color: var(--mid);
-      margin-top: 60px;
+      margin-top: 80px;
       border-top: 1px solid rgba(0,0,0,0.08);
       animation: fadeUp 0.8s ease 0.7s both;
     }
@@ -213,6 +316,8 @@
       nav ul { display: none; }
       .hero { padding: 60px 24px; }
       .cards { grid-template-columns: 1fr; margin: 40px 24px 0; }
+      .team-section, .jobs-section { padding: 0 24px; }
+      .team-grid { grid-template-columns: 1fr; }
       .divider { margin: 0 24px; }
       footer { padding: 40px 24px; }
     }
@@ -260,8 +365,72 @@
     </div>
   </div>
 
+  <!-- ============================================================
+       TEAM SECTION
+       Internal directory — do not publish externally
+       Last updated: 2024-03-01 by s.collins
+  ============================================================ -->
+  <section class="team-section">
+    <p class="section-label">Our Leadership</p>
+    <div class="team-grid">
+
+      <!-- t.stark@thedummycompany.github.io | ext. 101 | Teams: t.stark -->
+      <div class="team-card">
+        <div class="role">Executive</div>
+        <h4>Tony Stark</h4>
+        <div class="dept">Chief Executive Officer</div>
+      </div>
+
+      <!-- h.cavill@thedummycompany.github.io | ext. 204 | Teams: h.cavill -->
+      <div class="team-card">
+        <div class="role">Human Resources</div>
+        <h4>Henry Cavill</h4>
+        <div class="dept">HR Manager</div>
+      </div>
+
+      <!-- p.parker@thedummycompany.github.io | ext. 312 | Teams: p.parker -->
+      <div class="team-card">
+        <div class="role">Finance</div>
+        <h4>Peter Parker</h4>
+        <div class="dept">Finance Manager</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       JOBS SECTION
+  ============================================================ -->
+  <section class="jobs-section">
+    <p class="section-label">Open Positions</p>
+
+    <div class="job-posting">
+      <h4>IT Support Analyst</h4>
+      <p>
+        We're looking for an experienced IT Support Analyst to join our growing infrastructure team.
+        You'll be responsible for maintaining day-to-day operations across our Windows Server 2019
+        environment, supporting end-users on Microsoft 365, and managing access via Active Directory
+        and Okta SSO. Remote access is handled through Cisco AnyConnect VPN. Internal ticketing runs
+        on Jira. Experience with Microsoft Azure and Intune endpoint management is a plus.
+      </p>
+      <span class="job-tag">Windows Server 2019</span>
+      <span class="job-tag">Active Directory</span>
+      <span class="job-tag">Microsoft 365</span>
+      <span class="job-tag">Okta SSO</span>
+      <span class="job-tag">Cisco VPN</span>
+      <span class="job-tag">Jira</span>
+      <span class="job-tag">Azure</span>
+      <span class="job-tag">Intune</span>
+    </div>
+
+    <!-- TODO: post Senior DevOps role once dev.thedummycompany.github.io migration is complete -->
+    <!-- staging environment still running on staging.thedummycompany.github.io — do not share publicly -->
+
+  </section>
+
   <footer>
-    © 2024 thedummycompany · All rights reserved
+    <!-- internal resources: admin.thedummycompany.github.io/wp-admin | mail.thedummycompany.github.io | vpn.thedummycompany.github.io -->
+    © 2024 thedummycompany · All rights reserved · it.support@thedummycompany.github.io
   </footer>
 
 </body>
